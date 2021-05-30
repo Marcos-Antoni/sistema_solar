@@ -11,7 +11,7 @@ module.exports = {
 	module: {
 		rules: [
 			{
-				test: /\.js$/,
+				test: /\.js$/i,
 				exclude: /(node_modules|bower_components)/,
 				use: {
 					loader: "babel-loader",
@@ -21,8 +21,17 @@ module.exports = {
 				},
 			},
 			{
-				test: /\.s[ac]ss/i,
+				test: /\.s[ac]ss$/i,
 				use: ["style-loader", "css-loader", "sass-loader"],
+			},
+			{
+				test: /\.html$/,
+				exclude: /node_modules/,
+				use: { loader: "html-loader" },
+			},
+			{
+				test: /\.(png|svg|jpg|jpeg|gif)$/i,
+				type: "asset/resource",
 			},
 		],
 	},
