@@ -29,10 +29,10 @@ module.exports = {
 				exclude: /node_modules/,
 				use: { loader: "html-loader" },
 			},
-			{
-				test: /\.(png|svg|jpg|jpeg|gif)$/i,
-				type: "asset/resource",
-			},
+			// {
+			// 	test: /\.(png|svg|jpg|jpeg|gif)$/i,
+			// 	type: "asset/resource",
+			// },
 		],
 	},
 

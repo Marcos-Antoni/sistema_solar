@@ -1,7 +1,8 @@
+import "../style/normalize.scss"
 import "../style/index.scss"
 
-import planetaDeEstrellaFugaz from "../components/planeta/index"
+import EstrellaFugaz from "../components/estrellaFugaz/index"
 import otros from "../components/otros/index"
 
-customElements.define("planeta-estrella", planetaDeEstrellaFugaz)
+customElements.define("estrella-fugaz", EstrellaFugaz)
 customElements.define("otros-estrella", otros)
