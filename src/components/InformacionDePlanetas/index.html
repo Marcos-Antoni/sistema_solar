@@ -1,0 +1,73 @@
+<style>
+	.contenedor-de-planetas {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+
+		height: 100%;
+		width: 100%;
+	}
+
+	.sub-titulo {
+		margin: 20px 0;
+		z-index: 5;
+	}
+
+	.contenedor-grid {
+		display: grid;
+		grid-template-columns: repeat(3, 3fr);
+		grid-row-gap: 50px;
+
+		width: 100%;
+
+		margin-bottom: 20px;
+	}
+
+	.planeta {
+		/* display: flex;
+		justify-content: center; */
+
+		width: 100%;
+		height: auto;
+
+		z-index: 5;
+	}
+</style>
+
+<div class="contenedor-de-planetas">
+	<h2 class="sub-titulo">Planetas del sistema solar</h2>
+	<div class="contenedor-grid">
+		<info-planeta class="planeta" img="../img/planeta_tierra.jpg">
+			<span slot="nombre">Tierra</span>
+
+			<span slot="contenido">
+				La Tierra es un planeta del sistema solar que gira alrededor de su estrella el Sol
+				en la tercera órbita más interna.
+			</span>
+		</info-planeta>
+		<info-planeta class="planeta" img="../img/palenta_marte.jpg">
+			<span slot="nombre">Tierra</span>
+
+			<span slot="contenido">
+				La Tierra es un planeta del sistema solar que gira alrededor de su estrella el Sol
+				en la tercera órbita más interna.
+			</span>
+		</info-planeta>
+		<info-planeta class="planeta" img="../img/planeta_tierra.jpg">
+			<span slot="nombre">Tierra</span>
+
+			<span slot="contenido">
+				La Tierra es un planeta del sistema solar que gira alrededor de su estrella el Sol
+				en la tercera órbita más interna.
+			</span>
+		</info-planeta>
+		<info-planeta class="planeta" img="../img/planeta_tierra.jpg">
+			<span slot="nombre">Tierra</span>
+
+			<span slot="contenido">
+				La Tierra es un planeta del sistema solar que gira alrededor de su estrella el Sol
+				en la tercera órbita más interna.
+			</span>
+		</info-planeta>
+	</div>
+</div>

@@ -14,7 +14,7 @@ export default class estrellaFugaz extends HTMLElement {
 			const tamanoDeDiv = [e.target.clientWidth, e.target.clientHeight]
 			const Star = document.createElement("span")
 
-			if (e.x < 125) {
+			if (e.x < tamanoDeDiv[0] * 0.5) {
 				Star.style = `
 				--direccion-de-estrella: 225deg;
 				--translateX:125px;
@@ -47,21 +47,29 @@ export default class estrellaFugaz extends HTMLElement {
 	}
 
 	connectedCallback() {
-		const ContenedorDiv = this.shadowRoot.querySelector(".contenedor-de-estrellafugaz")
-		ContenedorDiv.addEventListener("click", e => {
-			this.appearStar(e, ContenedorDiv)
+		this.contenedorDiv = this.shadowRoot.querySelector(".contenedor-de-estrellafugaz")
+
+		//declarando eventos
+		this.contenedorDiv.addEventListener("click", e => {
+			this.appearStar(e, this.contenedorDiv)
 		})
+
+		// colocando atributos
+		this.contenedorDiv.style.backgroundImage = `url(${this.url})`
+
 		this.isRender = true
 	}
 
 	attributeChangedCallback(nameVal, oldVal, newVal) {
-		// this.saludo = newVal
-		// if (this.isRender) {
-		// 	this.appendChild(`<h2>hola ${this.saludo}<h2>`)
-		// }
+		this.url = newVal
+
+		// colocando atributos
+		if (this.isRender) {
+			this.contenedorDiv.style.backgroundImage = `url(${this.url})`
+		}
 	}
 
 	static get observedAttributes() {
-		// return ["saludo"]
+		return ["url"]
 	}
 }

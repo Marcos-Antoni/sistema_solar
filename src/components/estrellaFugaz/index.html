@@ -1,4 +1,13 @@
 <style>
+	.contenedor-principal {
+		width: 100%;
+		height: 100%;
+		max-width: 100vw;
+
+		overflow: hidden;
+		padding: 0;
+	}
+
 	.contenedor-de-estrellafugaz {
 		display: flex;
 		justify-content: center;
@@ -6,25 +15,21 @@
 
 		position: relative;
 
-		background: url(./img/superficie_de_la_tierra.jpg) no-repeat;
+		background: url(../img/superficie_de_la_tierra.jpg) no-repeat;
 		background-size: cover;
 		background-position-x: center;
 		background-position-y: 20%;
 
 		width: 100%;
-		height: 40vh;
-
-		max-width: 100vw;
+		height: 100%;
 
 		z-index: 5;
 		cursor: pointer;
 		transition-duration: 0.5s;
-
-		overflow: hidden;
 	}
 
 	.contenedor-de-estrellafugaz:hover {
-		transform: scale(1.05);
+		transform: scale(1.08);
 	}
 
 	.estrellafugaz {
@@ -86,7 +91,9 @@
 		margin: 0;
 	}
 </style>
-<div class="contenedor-de-estrellafugaz">
-	<h1 class="titulo">Sistema solar</h1>
-	<span class="estrellafugaz"> </span>
+<div class="contenedor-principal">
+	<div class="contenedor-de-estrellafugaz">
+		<h1 class="titulo">Sistema solar</h1>
+		<span class="estrellafugaz"> </span>
+	</div>
 </div>
