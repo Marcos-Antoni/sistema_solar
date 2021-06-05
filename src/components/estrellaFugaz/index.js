@@ -58,7 +58,6 @@ export default class estrellaFugaz extends HTMLElement {
 		//declarando eventos
 		this.contenedorDiv.addEventListener("click", e => {
 			this.appearStar(e, this.contenedorDiv)
-			console.log(e)
 		})
 
 		// colocando atributos

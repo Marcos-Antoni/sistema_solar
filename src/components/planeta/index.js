@@ -12,7 +12,6 @@ export default class Planeta extends HTMLElement {
 		const img = this.shadowRoot.querySelector("img")
 
 		img.src = this.img
-		console.log(img.src)
 	}
 
 	attributeChangedCallback(nameVal, oldVal, newVal) {

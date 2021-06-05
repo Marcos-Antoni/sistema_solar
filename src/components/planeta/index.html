@@ -1,7 +1,8 @@
 <style>
 	* {
-		transition-duration: 0.8s;
+		transition-duration: 0.5s;
 		--borde: 20px;
+		--z-index: 6;
 	}
 
 	.contenedor-planeta {
@@ -24,7 +25,6 @@
 		clip-path: circle(20% at center);
 
 		opacity: 0;
-		z-index: 5;
 	}
 
 	.contenedor-planeta:hover .estrella-fugaz {
@@ -48,7 +48,7 @@
 		clip-path: circle(20% at center);
 
 		transition: 0.5s;
-		z-index: 6;
+		z-index: var(--z-index);
 	}
 
 	.contenedor-planeta:hover img {
@@ -69,7 +69,7 @@
 		visibility: hidden;
 		opacity: 0;
 
-		z-index: 6;
+		z-index: var(--z-index);
 	}
 
 	.contenedor-planeta:hover .info .contenido {
@@ -88,11 +88,28 @@
 
 		text-align: center;
 
-		z-index: 6;
+		z-index: var(--z-index);
 	}
 
 	.contenedor-planeta:hover .info .nombre {
 		top: 0%;
+	}
+
+	.contenedor-planeta .info .boton-neon {
+		position: absolute;
+
+		bottom: 25px;
+		left: 20px;
+
+		opacity: 0;
+
+		z-index: var(--z-index);
+	}
+
+	.contenedor-planeta:hover .info .boton-neon {
+		bottom: 50px;
+
+		opacity: 1;
 	}
 </style>
 
@@ -113,6 +130,8 @@
 				en la tercera órbita más interna.
 			</slot>
 		</p>
+
+		<button class="boton-neon" is="boton-neon"></button>
 	</div>
 	<img />
 </div>

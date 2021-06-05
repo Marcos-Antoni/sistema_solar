@@ -29,6 +29,6 @@ export default class InformacionDePlanetas extends HTMLElement {
 	connectedCallback() {
 		this.shadowRoot.innerHTML = html
 
-		this.newStar(250)
+		this.newStar(300)
 	}
 }
