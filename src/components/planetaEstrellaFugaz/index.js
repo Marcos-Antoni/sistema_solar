@@ -3,11 +3,11 @@ import html from "./index.html"
 export default class otros extends HTMLElement {
 	constructor() {
 		super()
+		this.attachShadow({ mode: "open" })
 	}
 
 	connectedCallback() {
-		const shadow = this.attachShadow({ mode: "open" })
-		shadow.innerHTML = html
+		this.shadowRoot.innerHTML = html
 		this.isRender = true
 	}
 }

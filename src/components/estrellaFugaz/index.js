@@ -11,25 +11,31 @@ export default class estrellaFugaz extends HTMLElement {
 
 		// funciones
 		this.appearStar = (e, contenedor) => {
-			const tamanoDeDiv = [e.target.clientWidth, e.target.clientHeight]
+			const tamanoDeDiv = [contenedor.clientWidth, contenedor.clientHeight]
 			const Star = document.createElement("span")
+			const x = e.offsetX
+			const y = e.offsetY
 
-			if (e.x < tamanoDeDiv[0] * 0.5) {
+			let direccion = 1
+
+			if (x < tamanoDeDiv[0] * 0.5) {
 				Star.style = `
 				--direccion-de-estrella: 225deg;
 				--translateX:125px;
 				`
+
+				direccion = -1
 			}
 
-			if (tamanoDeDiv[1] > e.y + 125) {
-				Star.style.top = `${e.y}px`
-				Star.style.left = `${e.x}px`
-			} else if (tamanoDeDiv[0] > e.x + 100) {
-				Star.style.top = `${e.y - 100}px`
-				Star.style.left = `${e.x + 100}px`
+			if (tamanoDeDiv[1] > y + 125) {
+				Star.style.top = `${y}px`
+				Star.style.left = `${x}px`
+			} else if (tamanoDeDiv[0] > x + 100 && 0 < x - 100) {
+				Star.style.top = `${y - 100}px`
+				Star.style.left = `${x + 100 * direccion}px`
 			} else {
-				Star.style.top = `${e.y - 150}px`
-				Star.style.left = `${e.x}px`
+				Star.style.top = `${y - 150}px`
+				Star.style.left = `${x}px`
 			}
 
 			Star.className = this.StarClassName
@@ -52,6 +58,7 @@ export default class estrellaFugaz extends HTMLElement {
 		//declarando eventos
 		this.contenedorDiv.addEventListener("click", e => {
 			this.appearStar(e, this.contenedorDiv)
+			console.log(e)
 		})
 
 		// colocando atributos
