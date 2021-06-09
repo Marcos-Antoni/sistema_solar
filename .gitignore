@@ -1,3 +1,4 @@
 /node_modules
-/build
-/informacion/horas_trabajando.txt
+/informacion
+/src
+
