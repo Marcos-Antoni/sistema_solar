@@ -56,5 +56,10 @@ body {
 
 			z-index: 1;
 		}
+
+		/* media 365  */
+		@media (max-width: 365px) {
+			padding: 0 10px;
+		}
 	}
 }

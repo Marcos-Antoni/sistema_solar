@@ -76,6 +76,6 @@ export default class estrellaFugaz extends HTMLElement {
 	}
 
 	static get observedAttributes() {
-		return ["url"]
+		return ["planeta"]
 	}
 }
