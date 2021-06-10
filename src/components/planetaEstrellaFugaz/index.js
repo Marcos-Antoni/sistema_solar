@@ -10,7 +10,7 @@ export default class otros extends HTMLElement {
 		const planeta = this.shadowRoot.querySelector("estrella-fugaz")
 		ImagenPlaneta.html = planeta
 
-		ImagenPlaneta.cambiarUrl("../img/superficie_de_la_tierra.jpg")
+		ImagenPlaneta.cambiarUrl("./img/superficie_de_la_tierra.jpg")
 	}
 
 	connectedCallback() {
